@@ -5,11 +5,29 @@ const messages = [
 ];
 
 export default function App() {
-  const step = 1;
+  const step = 1
   const buttonStyle = {
     backgroundColor: '#7950f2',
     color: '#ffffff',
   }
+
+  function handlePrevious() {
+    alert('Previous')
+    // if (step < 3) {
+    //   setStep(step + 1);
+    // } else {
+    //   alert('You have completed all steps');
+    // }
+  }
+  function handleNext() {
+    alert('Next')
+    // if (step < 3) {
+    //   setStep(step + 1);
+    // } else {
+    //   alert('You have completed all steps');
+    // }
+  }
+
   return (
     <div className="steps">
       <div className="numbers">
@@ -19,8 +37,16 @@ export default function App() {
       </div>
       <p className="message">Step {step} {messages[step - 1]}</p>
       <div className="buttons">
-        <button style={buttonStyle}>Previous</button>
-        <button style={buttonStyle}>Next</button>
+        <button style={buttonStyle}
+          onClick={handlePrevious}
+        >
+          Previous
+        </button>
+        <button style={buttonStyle}
+          onClick={handleNext}
+        >
+          Next
+        </button>
       </div>
     </div>
   );
