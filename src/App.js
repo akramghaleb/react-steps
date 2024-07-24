@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Counter from "./Counter";
 
 const messages = [
   "Learn React ⚛️",
@@ -44,7 +45,9 @@ export default function App() {
               Next
             </button>
           </div>
+
         </div>)}
+      {!isOpen && (<Counter />)}
     </>
   );
 }
