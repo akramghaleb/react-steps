@@ -33,8 +33,8 @@ export default function Counter() {
 
   return (
     <div className="steps">
-      <p className="message">Step {step}</p>
-      <p className="message">Counter {counter}</p>
+      <p className="message"><input type="range" min="1" max="10" value={step} onChange={e => setStep(Number(e.target.value))} />Step {step}</p>
+      <p className="message"><input type="text" value={counter} onChange={e => setCounter(Number(e.target.value))} /></p>
       <p className="message">
         {counter === 0
           ? "Today is "
