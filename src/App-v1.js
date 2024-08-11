@@ -1,4 +1,4 @@
-import { Children, useState } from "react";
+import { useState } from "react";
 import Counter from "./Counter";
 
 const messages = [
@@ -10,7 +10,10 @@ const messages = [
 export default function App() {
   const [step, setStep] = useState(1)
   const [isOpen, setIsOpen] = useState(true)
-
+  const buttonStyle = {
+    backgroundColor: '#7950f2',
+    color: '#ffffff',
+  }
 
   function handlePrevious() {
     if (step > 1) setStep(s => s - 1);
@@ -31,35 +34,20 @@ export default function App() {
           </div>
           <p className="message">Step {step} {messages[step - 1]}</p>
           <div className="buttons">
-            <Button bgColor="#7950f2"
-              textColor="#fff"
+            <button style={buttonStyle}
               onClick={handlePrevious}
             >
-              <span>👈</span> Previous
-            </Button>
-            <Button bgColor="#7950f2"
-              textColor="#fff"
+              Previous
+            </button>
+            <button style={buttonStyle}
               onClick={handleNext}
             >
-              Next <span>👉</span>
-            </Button>
+              Next
+            </button>
           </div>
 
         </div>)}
       {!isOpen && (<Counter />)}
     </>
   );
-}
-
-function Button({ textColor
-  , bgColor
-  , onClick, children }) {
-  return <button style={{
-    backgroundColor: bgColor,
-    color: textColor,
-  }}
-    onClick={onClick}
-  >
-    {children}
-  </button>
 }
